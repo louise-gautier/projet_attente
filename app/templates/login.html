@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet"          href="{{ url_for('static', filename='css/login.css') }}">
+
+<head>
+    {% include 'head.html' %}
+</head>
+
+<body style="background-color: #1D2020; height: 100%; width: 100%;">
+
+    <div class="login_container" style="width: 80%; margin: auto;">
+        <form action="" method="POST" novalidate class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="eHHpUTP7SLHngUtaL9q2ArLwwirnPsuuBh+vRhNne8i3qBDe7Xf48d9V00/W3x72G30GA6AA2CwkggfkNynP7j5cVz0duwwUyuOvyMawrHfG6ckAascQRqEIReegUtH9">
+            {{ form.hidden_tag() }}
+            <br>
+            <br>
+            <div class="dragArea row">
+                <div class="col-lg-12 col-md-12 col-sm-12" style="display: block; justify-content: center;">
+                    <img src="{{ url_for('static', filename='img/icon-long.png') }}" alt="Taupe Chef Ligue" style="width: 80%; margin: auto;">
+                    <p style="text-align: center;"><a href="{{ url_for('generales_public') }}" style="color: white; text-decoration: underline;"><b>• Règles du jeu •</b></a></p>
+                </div>
+            </div>
+            <div class="dragArea row" style="padding: 5px; justify-content: center;">
+                <div class="col-lg col-md col-12 form-group">
+                    {{ form.username(class_="form-control", placeholder="Pseudo") }}
+                    <p style="font-size: 10px; margin-top: 4px; margin-bottom: 4px;"><i>Attention, le login est sensible à la casse et aux espaces</i> 😉</p>
+                    {% if form.username.errors %}{% for error in form.username.errors %}<span style="color: #62B8B1;">{{ error }}</span>{% endfor %}{% endif %}
+
+                </div>
+                <div class="col-lg col-md col-12 form-group">
+                    {{ form.password(class_="form-control", placeholder="Mot de passe") }}
+                    {% if form.password.errors %}{% for error in form.password.errors %}<span style="color: #62B8B1;">{{ error }}</span>{% endfor %}{% endif %}
+                </div>
+            </div>
+            <div class="dragArea row">
+                <div class="col-lg-12 col-md-12 col-sm-12" style="display: block; justify-content: center;">
+                    {{ form.submit(class_="btn btn-warning display-4", style="margin: auto;") }}
+                    <div style="display: flex; margin: auto; justify-content: center; padding: 10px;">
+                        {{ form.remember_me(class="option-input checkbox") }}
+                        <p class="mbr-text mbr-fonts-style display-7" style="color: #E0E2E2; padding: 10px; font-size: 15px; margin: 2px 0px 0px 0px;">Rester connecté</p></div>
+                        <p class="mbr-text mbr-fonts-style display-7" style="color: #E0E2E2; margin: auto auto 10px auto; text-align: center;"><a href="{{ url_for('oubli') }}" style="color: white; text-decoration: underline;"><b>Mot de passe oublié ?</b></a></p>
+                        <p style="color: #E0E2E2; font-size: 12px; margin: auto auto 10px auto; text-align: center;">Un compte Taupe Chef Ligue ? <a href="{{ url_for('register_from_tcl') }}" style="color: white; text-decoration: underline;"><b>S'inscrire avec TCL</b></a></p>
+                        <p style="color: #E0E2E2; font-size: 12px; margin: auto auto 10px auto; text-align: center;">Nouveau ici ? <a href="{{ url_for('register') }}" style="color: white; text-decoration: underline;"><b>S'inscrire</b></a></p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </form>
+    </div>
+
+</body>
+</html>
