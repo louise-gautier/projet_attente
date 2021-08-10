@@ -44,7 +44,7 @@
    "density": "4.0"
   }
  ],
-  "start_url": "/",
+  "start_url": "/ligues/",
   "background_color": "#1D2020",
   "display": "standalone",
   "scope": "/",
